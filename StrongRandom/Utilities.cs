@@ -1,0 +1,86 @@
+﻿using System;
+
+namespace Extensions.Standard.RandomExtensions
+{
+    public static partial class Utilities
+    {
+        /// <summary>
+        ///     Get random number from 0 to 255 or specified upper limit.
+        ///     Number is less than specified maximum.
+        /// </summary>
+        /// <param name="rng"></param>
+        /// <param name="upperLimit"></param>
+        /// <returns></returns>
+        public static byte NextByte(this Random rng, short upperLimit = byte.MaxValue + 1)
+        {
+            return (byte)rng.Next(upperLimit);
+        }
+
+        public static bool NextBool(this Random rng)
+        {
+            return rng.Next() % 2 == 0; // or rng.NextDouble() < .5;
+        }
+
+        public static char RandomLowercaseLetter(this Random rng)
+        {
+            return rng.NextChar((char)97, (char)123);
+        }
+
+        public static char RandomUppercaseLetter(this Random rng)
+        {
+            return rng.NextChar((char)65, (char)91);
+        }
+
+        public static char NextChar(this Random rng, char lowerInclusive = '0', char upperExclusive = '{')
+        {
+            return Convert.ToChar(rng.Next(lowerInclusive, upperExclusive));
+        }
+
+        /// <summary>
+        ///     See ref http://stackoverflow.com/a/3365388/3922292
+        /// </summary>
+        /// <param name="random"></param>
+        /// <returns></returns>
+        public static float NextFloat(this Random random)
+        {
+            var mantissa = random.NextDouble() * 2.0 - 1.0;
+            var exponent = Math.Pow(2.0, random.Next(-126, 128));
+            return (float)(mantissa * exponent);
+        }
+
+        public static char NextChar(this Random rng, string chooseFrom)
+        {
+            if (string.IsNullOrEmpty(chooseFrom)) return (char)0;
+            return chooseFrom[rng.Next(chooseFrom.Length)];
+        }
+
+        public static char NextLetter(this Random rng)
+        {
+            return rng.NextChar("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+        }
+
+        public static char NextAlphanumeric(this Random rng)
+        {
+            return rng.NextChar("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+        }
+
+        public static double NextDouble(this Random rng, double min, double max)
+        {
+            return min + rng.NextDouble() * (max - min);
+        }
+
+        /// <summary>
+        ///     Box-Muller transform applied in order to get <b>normally-looking</b> double for provided mean and SD.
+        ///     Inspired by http://stackoverflow.com/a/218600
+        /// </summary>
+        /// <param name="rng"></param>
+        /// <param name="mean"></param>
+        /// <param name="sd"></param>
+        /// <returns></returns>
+        public static double NextNormal(this Random rng, double mean, double sd = 1)
+        {
+            var rand = Math.Sqrt(-2.0 * Math.Log(rng.NextDouble())) * Math.Sin(2.0 * Math.PI * rng.NextDouble());
+            return mean + sd * rand;
+        }
+    }
+}

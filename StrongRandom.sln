@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrongRandom", "StrongRandom\StrongRandom.csproj", "{B8E694A5-24B5-4389-92DC-BF9FB60B2743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Standard.RandomExtensions.Test", "Extensions.Standard.RandomExtensions.Test\Extensions.Standard.RandomExtensions.Test.csproj", "{70F4BB52-9694-4C87-938F-A21070B1931F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B8E694A5-24B5-4389-92DC-BF9FB60B2743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8E694A5-24B5-4389-92DC-BF9FB60B2743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8E694A5-24B5-4389-92DC-BF9FB60B2743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F4BB52-9694-4C87-938F-A21070B1931F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F4BB52-9694-4C87-938F-A21070B1931F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F4BB52-9694-4C87-938F-A21070B1931F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F4BB52-9694-4C87-938F-A21070B1931F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
