@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
+using Extensions.Standard;
 
 namespace Extensions.Standard.RandomExtensions.Test
 {
