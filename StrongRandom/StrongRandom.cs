@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Security.Cryptography;
 
 namespace Extensions.Standard.RandomExtensions
 {
-    /// <summary>
-    ///     Implements interface left by Random using RNGCryptoServiceProvider underneath
-    /// </summary>
     public class StrongRandom : Random
     {
-        private RandomNumberGenerator Provider { get; } = RandomNumberGenerator.Create();
+        private readonly IRandomProvider _provider;
+        public StrongRandom(IRandomProvider provider = null)
+        {
+            _provider = provider ?? new BufferedRadnomProvider(44);
+        }
 
         private int InternalSample()
         {
             var buffer = new byte[4];
-            Provider.GetBytes(buffer);
+            _provider.GetBytes(buffer);
             return BitConverter.ToInt32(buffer, 0) & int.MaxValue;
         }
 
@@ -30,15 +30,15 @@ namespace Extensions.Standard.RandomExtensions
         protected override double Sample()
         {
             var buffer = new byte[4];
-            Provider.GetBytes(buffer);
+            _provider.GetBytes(buffer);
             var temp = BitConverter.ToUInt32(buffer, 0);
-            return temp / (1.0 + uint.MaxValue); //perfectly in range of <0..1)
+            return temp / (1.0 + uint.MaxValue);
         }
 
         public override void NextBytes(byte[] buffer)
         {
             if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-            Provider.GetBytes(buffer);
+            _provider.GetBytes(buffer);
         }
 
         public override int Next()

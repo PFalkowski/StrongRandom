@@ -21,31 +21,35 @@ namespace Extensions.Standard.RandomExtensions
             return rng.Next() % 2 == 0; // or rng.NextDouble() < .5;
         }
 
-        public static char RandomLowercaseLetter(this Random rng)
-        {
-            return rng.NextChar((char)97, (char)123);
-        }
-
-        public static char RandomUppercaseLetter(this Random rng)
-        {
-            return rng.NextChar((char)65, (char)91);
-        }
-
-        public static char NextChar(this Random rng, char lowerInclusive = '0', char upperExclusive = '{')
+        public static char NextChar(this Random rng, char lowerInclusive = (char)32, char upperExclusive = (char)127)
         {
             return Convert.ToChar(rng.Next(lowerInclusive, upperExclusive));
         }
 
+        public static char NextLowercaseLetter(this Random rng)
+        {
+            return rng.NextChar((char)97, (char)123);
+        }
+
+        public static char NextUppercaseLetter(this Random rng)
+        {
+            return rng.NextChar((char)65, (char)91);
+        }
         /// <summary>
-        ///     See ref http://stackoverflow.com/a/3365388/3922292
+        /// Returns a random float that is equal or greater than zero and less than 1.0
         /// </summary>
         /// <param name="random"></param>
         /// <returns></returns>
         public static float NextFloat(this Random random)
         {
-            var mantissa = random.NextDouble() * 2.0 - 1.0;
-            var exponent = Math.Pow(2.0, random.Next(-126, 128));
-            return (float)(mantissa * exponent);
+            var res = (float) random.NextDouble();
+            return res;
+        }
+
+        public static float NextFloat(this Random random, float min, float max)
+        {
+            double tmp = min + random.NextDouble() * ((double)max - min);
+            return (float) tmp;
         }
 
         public static char NextChar(this Random rng, string chooseFrom)
