@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Extensions.Standard.RandomExtensions
+﻿namespace Extensions.Standard.Randomization
 {
     public sealed class RandomProviderMock : IRandomProvider
     {

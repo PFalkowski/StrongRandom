@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace Extensions.Standard.RandomExtensions
+namespace Extensions.Standard.Randomization
 {
     /// <summary>
     /// Internally uses RNGCryptoServiceProvider. Buffered call to RNGCryptoServiceProvider up to bufferSize

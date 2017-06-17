@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Extensions.Standard.RandomExtensions;
 using NSubstitute;
-using NSubstitute.ExceptionExtensions;
 using Xunit;
 
 namespace Extensions.Standard.Randomization.Test

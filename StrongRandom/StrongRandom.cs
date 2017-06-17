@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Security.Cryptography;
 
-namespace Extensions.Standard.RandomExtensions
+namespace Extensions.Standard.Randomization
 {
     public class StrongRandom : Random
     {

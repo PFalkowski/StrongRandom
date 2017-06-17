@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
-    <RootNamespace>Extensions.Standard.RandomExtensions</RootNamespace>
-    <AssemblyName>Extensions.Standard.RandomExtensions</AssemblyName>
+    <RootNamespace>Extensions.Standard.Randomization</RootNamespace>
+    <AssemblyName>Extensions.Standard.Randomization</AssemblyName>
     <Authors>Piotr Falkowski</Authors>
     <Company>Piotr Falkowski</Company>
     <Product>StrongRandom</Product>
@@ -15,7 +15,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/PFalkowski/StrongRandom</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PFalkowski/StrongRandom</RepositoryUrl>
-    <PackageId>Extensions.Standard.Randomization</PackageId>
+    <PackageId>StrongRandom</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

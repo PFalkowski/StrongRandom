@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrongRandom", "StrongRandom\StrongRandom.csproj", "{B8E694A5-24B5-4389-92DC-BF9FB60B2743}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Standard.Randomization", "StrongRandom\Extensions.Standard.Randomization.csproj", "{B8E694A5-24B5-4389-92DC-BF9FB60B2743}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Standard.Randomization.Test", "Extensions.Standard.RandomExtensions.Test\Extensions.Standard.Randomization.Test.csproj", "{70F4BB52-9694-4C87-938F-A21070B1931F}"
 EndProject

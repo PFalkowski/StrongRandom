@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StrongRandom\StrongRandom.csproj" />
+    <ProjectReference Include="..\StrongRandom\Extensions.Standard.Randomization.csproj" />
   </ItemGroup>
 
   <ItemGroup>

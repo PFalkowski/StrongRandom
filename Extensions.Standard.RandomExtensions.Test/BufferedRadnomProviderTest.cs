@@ -1,5 +1,4 @@
-﻿using Extensions.Standard.RandomExtensions;
-using Xunit;
+﻿using Xunit;
 
 namespace Extensions.Standard.Randomization.Test
 {

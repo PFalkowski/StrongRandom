@@ -1,4 +1,4 @@
-﻿namespace Extensions.Standard.RandomExtensions
+﻿namespace Extensions.Standard.Randomization
 {
     public interface IRandomProvider
     {

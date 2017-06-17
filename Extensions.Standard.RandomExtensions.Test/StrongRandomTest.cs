@@ -1,6 +1,4 @@
 ﻿using System;
-using Extensions.Standard.RandomExtensions;
-using NSubstitute;
 using Xunit;
 
 namespace Extensions.Standard.Randomization.Test

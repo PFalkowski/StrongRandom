@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Extensions.Standard.RandomExtensions
+namespace Extensions.Standard.Randomization
 {
     public static partial class Utilities
     {
