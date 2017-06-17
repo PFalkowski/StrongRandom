@@ -1,4 +1,4 @@
-﻿namespace Extensions.Standard.Randomization
+﻿namespace Extensions.Standard.Randomization.Test
 {
     public sealed class RandomProviderMock : IRandomProvider
     {

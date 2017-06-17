@@ -20,7 +20,7 @@ namespace Extensions.Standard.Randomization
         {
             using (var csprng = RandomNumberGenerator.Create())
             {
-                csprng.GetBytes(_bufer.Value);
+                csprng.GetBytes(buffer);
             }
         }
 
