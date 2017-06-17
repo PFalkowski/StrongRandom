@@ -8,10 +8,9 @@ namespace Extensions.Standard.Randomization.Test
     public class StrongRandomTest
     {
         [Fact]
-        public void CtorCreatesValidInstance()
+        public void CtorCreatesValidInstanceWithDefault()
         {
-            var providerMock = new RandomProviderMock(0);
-            var tested = new StrongRandom(providerMock);
+            var tested = new StrongRandom(null);
         }
 
         [Theory]
