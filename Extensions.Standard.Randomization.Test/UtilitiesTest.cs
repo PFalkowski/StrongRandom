@@ -34,13 +34,11 @@ namespace Extensions.Standard.Randomization.Test
         public void RandByteTest2()
         {
             var repeats = 100;
-            var randomNumbers = new HashSet<byte>();
             var rng = new Random();
             for (var i = 0; i < repeats; ++i)
             {
                 var res = rng.NextByte();
-                Assert.True(res.InOpenRange(byte.MinValue, byte.MaxValue));
-                randomNumbers.Add(res);
+                Assert.True(res >= byte.MinValue && res <= byte.MaxValue);
             }
         }
 
