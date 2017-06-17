@@ -3,6 +3,9 @@ using System.Security.Cryptography;
 
 namespace Extensions.Standard.RandomExtensions
 {
+    /// <summary>
+    /// Internally uses RNGCryptoServiceProvider. Buffered call to RNGCryptoServiceProvider up to bufferSize
+    /// </summary>
     public class BufferedRadnomProvider : IRandomProvider
     {
         public BufferedRadnomProvider(int bufferSize)
