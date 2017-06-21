@@ -68,10 +68,12 @@ namespace Extensions.Standard.Randomization
             return rng.NextChar("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
         }
 
-        //public static double NextDouble(this Random rng, double min, double max) // unsafe. Will overflow for larger min / max values. Needs fixing - mantisa & exponent randomization will be best
-        //{
-        //    return min + rng.NextDouble() * (max - min);
-        //}
+        public static double NextDouble(this Random rng, double max)
+        {
+            if (max < 0)
+                throw new ArgumentOutOfRangeException(nameof(max));
+            return rng.NextDouble() * max;
+        }
 
         /// <summary>
         ///     Box-Muller transform applied in order to get <b>normally-looking</b> double for provided mean and SD.

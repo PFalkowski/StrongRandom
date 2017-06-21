@@ -174,5 +174,29 @@ namespace Extensions.Standard.Randomization.Test
             var received = randomSubstitute.NextFloat(float.MinValue, float.MaxValue);
             Assert.Equal(float.MaxValue, received);
         }
+        [Theory]
+        [InlineData(1.0)]
+        [InlineData(0.01)]
+        [InlineData(1111.0)]
+        [InlineData(15002900.0)]
+        public void NextDoubleReturnsMultiplied(double input)
+        {
+            var randomSubstitute = Substitute.For<Random>();
+            var almostOne = 0.9999999999999f;
+            randomSubstitute.NextDouble().Returns(almostOne);
+            var received = randomSubstitute.NextDouble(input);
+            Assert.Equal(almostOne * input, received);
+        }
+
+        [Theory]
+        [InlineData(-1.120)]
+        [InlineData(-11.0)]
+        public void NextDoubleThrowsForMaxLessThanZero(double input)
+        {
+            var randomSubstitute = Substitute.For<Random>();
+            var almostOne = 0.9999999999999f;
+            randomSubstitute.NextDouble().Returns(almostOne);
+            Assert.Throws<ArgumentOutOfRangeException>(() => randomSubstitute.NextDouble(input));
+        }
     }
 }
