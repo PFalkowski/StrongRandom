@@ -16,7 +16,8 @@
     <PackageProjectUrl>https://github.com/PFalkowski/StrongRandom</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PFalkowski/StrongRandom</RepositoryUrl>
     <PackageId>StrongRandom</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>Introduce NextDouble(min, max) extension method</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

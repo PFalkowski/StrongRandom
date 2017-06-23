@@ -174,6 +174,7 @@ namespace Extensions.Standard.Randomization.Test
             var received = randomSubstitute.NextFloat(float.MinValue, float.MaxValue);
             Assert.Equal(float.MaxValue, received);
         }
+
         [Theory]
         [InlineData(1.0)]
         [InlineData(0.01)]
@@ -187,6 +188,39 @@ namespace Extensions.Standard.Randomization.Test
             var received = randomSubstitute.NextDouble(input);
             Assert.Equal(almostOne * input, received);
         }
+
+        [Theory]
+        [InlineData(1.0)]
+        [InlineData(0.01)]
+        [InlineData(1111.0)]
+        [InlineData(15002900.0)]
+        public void NextDoubleReturnsScaledForMinMax(double input)
+        {
+            var randomSubstitute = Substitute.For<Random>();
+            var almostOne = 0.9999999999999;
+            randomSubstitute.NextDouble().Returns(almostOne);
+            var received = randomSubstitute.NextDouble(-input, input);
+            Assert.Equal(Math.Round(almostOne * input, 5), Math.Round(received, 5));
+        }
+
+        [Fact]
+        public void NextDoubleThrowsWhenMinGreaterThanMax()
+        {
+            var randomSubstitute = Substitute.For<Random>();
+            Assert.Throws<ArgumentOutOfRangeException>(() => randomSubstitute.NextDouble(1000, -1100));
+        }
+
+        [Fact]
+        public void NextDoubleEdgeCaseDoesNotThrow()
+        {
+            var randomSubstitute = Substitute.For<Random>();
+            var almostOne = 0.9999999999999;
+            randomSubstitute.NextDouble().Returns(almostOne);
+            var expected = double.MinValue + almostOne * double.MaxValue - almostOne * double.MinValue;
+            var received = randomSubstitute.NextDouble(double.MinValue, double.MaxValue);
+            Assert.Equal(Math.Round(expected), Math.Round(received));
+        }
+
 
         [Theory]
         [InlineData(-1.120)]

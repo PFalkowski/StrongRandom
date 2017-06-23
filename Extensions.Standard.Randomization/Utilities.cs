@@ -42,14 +42,14 @@ namespace Extensions.Standard.Randomization
         /// <returns></returns>
         public static float NextFloat(this Random random)
         {
-            var res = (float) random.NextDouble();
+            var res = (float)random.NextDouble();
             return res;
         }
 
         public static float NextFloat(this Random random, float min, float max)
         {
             double tmp = min + random.NextDouble() * ((double)max - min);
-            return (float) tmp;
+            return (float)tmp;
         }
 
         public static char NextChar(this Random rng, string chooseFrom)
@@ -70,9 +70,15 @@ namespace Extensions.Standard.Randomization
 
         public static double NextDouble(this Random rng, double max)
         {
-            if (max < 0)
-                throw new ArgumentOutOfRangeException(nameof(max));
+            if (max < 0) throw new ArgumentOutOfRangeException(nameof(max));
             return rng.NextDouble() * max;
+        }
+
+        public static double NextDouble(this Random rng, double min, double max)
+        {
+            if (max < min) throw new ArgumentOutOfRangeException(nameof(min));
+            var value = rng.NextDouble();
+            return min + value * max - value * min;
         }
 
         /// <summary>
