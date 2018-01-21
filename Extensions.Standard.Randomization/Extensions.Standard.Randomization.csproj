@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Extensions.Standard.Randomization</RootNamespace>
     <AssemblyName>Extensions.Standard.Randomization</AssemblyName>
     <Authors>Piotr Falkowski</Authors>
     <Company>Piotr Falkowski</Company>
     <Product>StrongRandom</Product>
     <Description>Random interface implemented with Cryptographically-Secure Pseudo-Random Number Generator. Everywhere you use System.Random, StrongRandom can be used now. Additionally missing boilerplate extensions for any Random: NextBool, NextChar, NextString etc. added. Strongly unit tested.</Description>
-    <Copyright>Piotr Falkowski © 2017</Copyright>
+    <Copyright>Piotr Falkowski © 2018</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Random, CSPRNG, Extension-methods</PackageTags>
@@ -16,8 +16,8 @@
     <PackageProjectUrl>https://github.com/PFalkowski/StrongRandom</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PFalkowski/StrongRandom</RepositoryUrl>
     <PackageId>StrongRandom</PackageId>
-    <Version>1.2.0</Version>
-    <PackageReleaseNotes>Introduce NextDouble(min, max) extension method</PackageReleaseNotes>
+    <Version>2.0.0</Version>
+    <PackageReleaseNotes>Update .NET Standard sdk to 2.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
