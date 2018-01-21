@@ -37,7 +37,6 @@ namespace Extensions.Standard.Randomization.Test
             for (var i = 0; i < repeats; ++i)
             {
                 var res = rng.NextByte();
-                Assert.True(res >= byte.MinValue && res <= byte.MaxValue);
             }
         }
 
