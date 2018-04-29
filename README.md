@@ -7,6 +7,6 @@
 Everywhere you use System.Random, StrongRandom can be used. 
 
 **Important!
-Use with caution in security critical scenarios, as the distribution can be somewhat skewed in integer returning method calls, due to division. GetBytes() is direct call to underlying RNG provider and is safe.**
+Use with caution in security critical scenarios, as the distribution can be somewhat skewed in integer returning method calls and NextDouble(). GetBytes() is direct call to underlying RNG provider and is safe.**
 
 Extensions for any Random: NextBool, NextChar, NextString etc. added.
