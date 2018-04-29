@@ -6,7 +6,7 @@
 ```System.Random``` interface implemented with Cryptographically-Secure Pseudo-Random Number Generator. 
 Everywhere you use System.Random, StrongRandom can be used. 
 
-Important!
-Do not use with security critical scenarios, as the distribution will be somewhat skewed in some method calls, due to division.
+**Important!
+Do not use with security critical scenarios, as the distribution will be somewhat skewed in some method calls, due to division.**
 
 Extensions for any Random: NextBool, NextChar, NextString etc. added.
