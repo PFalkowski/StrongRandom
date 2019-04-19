@@ -12,14 +12,14 @@ namespace Extensions.Standard.Randomization.Test
         [InlineData(100)]
         public void ConstructorCreatesValidInstance(int buffSize)
         {
-            var tested = new BufferedRadnomProvider(buffSize);
+            var tested = new BufferedRandomProvider(buffSize);
         }
         [Theory]
         [InlineData(100)]
         [InlineData(1000)]
         public void GetBytesReturnsFilledArray(int buffSize)
         {
-            var tested = new BufferedRadnomProvider(buffSize);
+            var tested = new BufferedRandomProvider(buffSize);
             var input = new byte[buffSize];
             tested.GetBytes(input);
 
@@ -33,7 +33,7 @@ namespace Extensions.Standard.Randomization.Test
         [InlineData(1000)]
         public void GetBytesReturnsFilledArrayWhenLessThanBuffer(int buffSize)
         {
-            var tested = new BufferedRadnomProvider(buffSize);
+            var tested = new BufferedRandomProvider(buffSize);
             var input = new byte[buffSize / 2];
             tested.GetBytes(input);
             var uniqueBytes = new HashSet<byte>();
@@ -46,7 +46,7 @@ namespace Extensions.Standard.Randomization.Test
         [InlineData(1000)]
         public void GetBytesReturnsFilledArrayWhenMoreThanBuffer(int buffSize)
         {
-            var tested = new BufferedRadnomProvider(buffSize);
+            var tested = new BufferedRandomProvider(buffSize);
             var input = new byte[buffSize * 2];
             tested.GetBytes(input);
             var uniqueBytes = new HashSet<byte>();
@@ -58,7 +58,7 @@ namespace Extensions.Standard.Randomization.Test
         public void GetBytesConsecutiveCallsDoesNotReturnSameValues()
         {
             const int buffSize = 4;
-            var tested = new BufferedRadnomProvider(buffSize);
+            var tested = new BufferedRandomProvider(buffSize);
             var input = new byte[buffSize];
             tested.GetBytes(input);
 
@@ -80,7 +80,7 @@ namespace Extensions.Standard.Randomization.Test
         public void GetBytesConsecutiveCallsDoesNotDegradePerformance(int numberOfCalls)
         {
             const int bufferSize = 100;
-            var tested = new BufferedRadnomProvider(bufferSize);
+            var tested = new BufferedRandomProvider(bufferSize);
             var input = new byte[bufferSize];
             for (var i = 0; i < numberOfCalls; ++i)
             {

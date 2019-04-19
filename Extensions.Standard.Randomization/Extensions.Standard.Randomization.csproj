@@ -5,9 +5,9 @@
     <RootNamespace>Extensions.Standard.Randomization</RootNamespace>
     <AssemblyName>Extensions.Standard.Randomization</AssemblyName>
     <Authors>Piotr Falkowski</Authors>
-    <Company>Piotr Falkowski</Company>
+    <Company></Company>
     <Product>StrongRandom</Product>
-    <Description>Random interface implemented with Cryptographically-Secure Pseudo-Random Number Generator. Everywhere you use System.Random, StrongRandom can be used now. Additionally missing boilerplate extensions for any Random: NextBool, NextChar, NextString etc. added. Strongly unit tested.</Description>
+    <Description>Random interface implemented with Cryptographically-Secure Pseudo-Random Number Generator. Everywhere you use System.Random, StrongRandom can be used now. Additionally missing boilerplate extensions for any Random: NextBool, NextChar, NextString etc. added.</Description>
     <Copyright>Piotr Falkowski © 2018</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>

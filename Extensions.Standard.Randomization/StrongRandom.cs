@@ -7,7 +7,7 @@ namespace Extensions.Standard.Randomization
         private readonly IRandomProvider _provider;
         public StrongRandom(IRandomProvider provider = null)
         {
-            _provider = provider ?? new BufferedRadnomProvider(44);
+            _provider = provider ?? new BufferedRandomProvider(44);
         }
 
         private int InternalSample()

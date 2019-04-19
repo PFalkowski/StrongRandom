@@ -6,9 +6,9 @@ namespace Extensions.Standard.Randomization
     /// <summary>
     /// Internally uses RNGCryptoServiceProvider. Buffered call to RNGCryptoServiceProvider up to bufferSize
     /// </summary>
-    public class BufferedRadnomProvider : IRandomProvider
+    public class BufferedRandomProvider : IRandomProvider
     {
-        public BufferedRadnomProvider(int bufferSize)
+        public BufferedRandomProvider(int bufferSize)
         {
             _bufer = new Lazy<byte[]>(() => new byte[bufferSize], true);
         }
@@ -16,7 +16,7 @@ namespace Extensions.Standard.Randomization
         private readonly Lazy<byte[]> _bufer;
         private int _currentIndex;
 
-        private void _getBytesInternal(byte[] buffer)
+        private void GetBytesInternal(byte[] buffer)
         {
             using (var csprng = RandomNumberGenerator.Create())
             {
@@ -26,7 +26,7 @@ namespace Extensions.Standard.Randomization
 
         private void RefreshBuffer()
         {
-            _getBytesInternal(_bufer.Value);
+            GetBytesInternal(_bufer.Value);
             _currentIndex = 0;
         }
 
@@ -38,7 +38,7 @@ namespace Extensions.Standard.Randomization
             }
             if (input.Length > _bufer.Value.Length)
             {
-                _getBytesInternal(input);
+                GetBytesInternal(input);
                 return;
             }
             else if (input.Length + _currentIndex > _bufer.Value.Length)
