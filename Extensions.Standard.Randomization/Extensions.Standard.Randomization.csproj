@@ -5,34 +5,30 @@
     <RootNamespace>Extensions.Standard.Randomization</RootNamespace>
     <AssemblyName>Extensions.Standard.Randomization</AssemblyName>
     <Authors>Piotr Falkowski</Authors>
-    <Company></Company>
+    <Company>Piotr Falkowski</Company>
     <Product>StrongRandom</Product>
-    <Description>Random interface implemented with Cryptographically-Secure Pseudo-Random Number Generator. Everywhere you use System.Random, StrongRandom can be used now. Additionally missing boilerplate extensions for any Random: NextBool, NextChar, NextString etc. added.</Description>
-    <Copyright>Piotr Falkowski © 2018</Copyright>
-    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Description>System.Random drop-in backed by a Cryptographically-Secure Pseudo-Random Number Generator. Everywhere you use System.Random, StrongRandom can be used. Extension methods for any Random: NextBool, NextChar, NextByte, NextNormal and more.</Description>
+    <Copyright>Piotr Falkowski © 2026</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>Random, CSPRNG, Extension-methods</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>Random, CSPRNG, Extension-methods, security, cryptography</PackageTags>
     <PackageProjectUrl>https://github.com/PFalkowski/StrongRandom</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PFalkowski/StrongRandom</RepositoryUrl>
     <PackageId>StrongRandom</PackageId>
-    <Version>2.0.0</Version>
-    <PackageReleaseNotes>Update .NET Standard sdk to 2.0</PackageReleaseNotes>
+    <Version>2.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
