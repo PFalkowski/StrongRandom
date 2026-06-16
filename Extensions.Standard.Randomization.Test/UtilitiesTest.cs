@@ -117,10 +117,8 @@ namespace Extensions.Standard.Randomization.Test
             }
         }
 
-        [Theory]
-        [InlineData("test")]
-        [InlineData(".NETStandard")]
-        public void NextAlphanumericRetrunsValidResult(string toChooseFrom)
+        [Fact]
+        public void NextAlphanumericRetrunsValidResult()
         {
             var randomSubstitute = Substitute.For<Random>();
             for (int i = '0'; i < '9' + 1; ++i)

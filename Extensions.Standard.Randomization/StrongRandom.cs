@@ -5,7 +5,7 @@ namespace Extensions.Standard.Randomization
     public class StrongRandom : Random
     {
         private readonly IRandomProvider _provider;
-        public StrongRandom(IRandomProvider provider = null)
+        public StrongRandom(IRandomProvider? provider = null)
         {
             _provider = provider ?? new BufferedRandomProvider(44);
         }

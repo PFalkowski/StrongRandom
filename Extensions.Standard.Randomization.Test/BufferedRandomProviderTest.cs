@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Extensions.Standard.Randomization.Test
 {
-    public class BufferedRadnomProviderTest
+    public class BufferedRandomProviderTest
     {
         [Theory]
         [InlineData(1)]

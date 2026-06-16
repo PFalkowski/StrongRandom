@@ -221,8 +221,8 @@ namespace Extensions.Standard.Randomization.Test
         {
             var providerMock = new RandomProviderMock(0);
             var tested = new StrongRandom(providerMock);
-            byte[] nullBytesArray = null;
-            Assert.Throws<ArgumentNullException>(() => tested.NextBytes(nullBytesArray));
+            byte[]? nullBytesArray = null;
+            Assert.Throws<ArgumentNullException>(() => tested.NextBytes(nullBytesArray!));
         }
         [Fact]
         public void NextThrowsArgumentOutOfRangeExceptionWhenNegativeIntPassedIn()
